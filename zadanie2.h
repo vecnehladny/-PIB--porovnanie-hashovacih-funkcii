@@ -38,12 +38,12 @@ NODE *searchBVS(NODE *bvs, int number);
 
 
 //--------------Červeno-čierny strom----------------
+//https://framagit.org/awoimbee_42/libft/tree/7fac487e9aff2381c8d87b79a5cf36fdc8bf064f/src/t_rbtree
 
 void leftrotateRBT(NODE **root, NODE *x);
 void rightrotateRBT(NODE **root, NODE *y);
 void insertRBT(NODE **root, int data);
 void insertfixRBT(NODE **root, NODE *z);
-
 
 //--------------Červeno-čierny strom----------------
 
