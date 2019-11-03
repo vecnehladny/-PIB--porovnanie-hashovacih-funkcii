@@ -29,5 +29,7 @@ void printBvs(NODE *root, int space);
 
 NODE *testBvs(int root);
 
+NODE *searchBVS(NODE *bvs, int number);
+
 
 #endif /* zadanie2_h */

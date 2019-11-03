@@ -49,6 +49,22 @@ NODE *bvsInsert(NODE *bvs, int number){
 	return bvs;
 }
 
+NODE *searchBVS(NODE *bvs, int number){
+	if(bvs->data == number){
+		return bvs;
+	}
+	
+	if(bvs->data > number){
+		searchBVS(bvs->left, number);
+	}
+	
+	if(bvs->data < number){
+		searchBVS(bvs->right, number);
+	}
+	
+	return NULL;
+}
+
 
 //https://www.geeksforgeeks.org/print-binary-tree-2-dimensions/
 void printBvs(NODE *root, int space){
