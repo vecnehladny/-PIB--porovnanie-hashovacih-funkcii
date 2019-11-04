@@ -17,6 +17,7 @@ typedef struct node {
 	int data;
 	char color;
 	struct node *left, *right, *parent;
+	short balanceFactor;
 } NODE;
 
 //---------------BVS bez vyvazovania----------------
@@ -47,7 +48,10 @@ NODE *searchRBT(NODE **root, int key);
 
 //-------------------AVL strom----------------------
 
-
+NODE *leftRotationAVL(NODE *node);
+NODE *rightRotationAVL(NODE *node);
+NODE *insertAVL(NODE *node, int number);
+NODE *searchAVL(NODE *node, int number);
 
 //-------------------AVL strom----------------------
 
