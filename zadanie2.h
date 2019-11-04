@@ -44,8 +44,17 @@ void leftrotateRBT(NODE **root, NODE *x);
 void rightrotateRBT(NODE **root, NODE *y);
 void insertRBT(NODE **root, int data);
 void insertfixRBT(NODE **root, NODE *z);
+NODE searchRBT(NODE **root, int key);
 
 //--------------Červeno-čierny strom----------------
+
+
+
+//-------------------AVL strom----------------------
+
+
+
+//-------------------AVL strom----------------------
 
 
 
