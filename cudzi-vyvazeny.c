@@ -196,3 +196,19 @@ void insertRBT(NODE **root, int data){
 	}
 }
 
+NODE *searchRBT(NODE **root, int key){
+	if((*root)->data == key){
+		return *root;
+	}
+	
+	if((*root)->data > key){
+		searchRBT(((*root)->left), key);
+	}
+	
+	if((*root)->data < key){
+		searchRBT(((*root)->right), key);
+	}
+	
+	return NULL;
+}
+

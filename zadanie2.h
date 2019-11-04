@@ -22,15 +22,10 @@ typedef struct node {
 //---------------BVS bez vyvazovania----------------
 
 NODE *bvsInit(int root);
-
 NODE *bvsNew(int number);
-
 NODE *bvsInsert(NODE *bvs, int number);
-
 void printBvs(NODE *root, int space);
-
 NODE *testBvs(int root);
-
 NODE *searchBVS(NODE *bvs, int number);
 
 //---------------BVS bez vyvazovania----------------
@@ -44,7 +39,7 @@ void leftrotateRBT(NODE **root, NODE *x);
 void rightrotateRBT(NODE **root, NODE *y);
 void insertRBT(NODE **root, int data);
 void insertfixRBT(NODE **root, NODE *z);
-NODE searchRBT(NODE **root, int key);
+NODE *searchRBT(NODE **root, int key);
 
 //--------------Červeno-čierny strom----------------
 
