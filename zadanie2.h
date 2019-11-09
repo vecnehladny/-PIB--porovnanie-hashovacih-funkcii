@@ -17,7 +17,7 @@ typedef struct node {
 	int data;
 	char color;
 	struct node *left, *right, *parent;
-	short balanceFactor;
+	int height;
 } NODE;
 
 //---------------BVS bez vyvazovania----------------
@@ -48,13 +48,34 @@ NODE *searchRBT(NODE **root, int key);
 
 //-------------------AVL strom----------------------
 
-NODE *leftRotationAVL(NODE *node);
-NODE *rightRotationAVL(NODE *node);
+NODE *RotationAVL(NODE *node, int isLeft);
+NODE *doubleRotationAVL(NODE *node, int isLeft);
 NODE *insertAVL(NODE *node, int number);
 NODE *searchAVL(NODE *node, int number);
+NODE *initAVL(int root);
+
+int getHeightAVL(NODE *node);
+int getHeightValAVL(NODE *node);
+int balanceFactorAVL(NODE *node);
 
 //-------------------AVL strom----------------------
 
+
+
+//--------------------ostatne-----------------------
+
+int getGreater(int i, int j){
+	
+	if(i > j){
+		return i;
+	}
+	
+	else {
+		return j;
+	}
+}
+
+//--------------------ostatne-----------------------
 
 
 #endif /* zadanie2_h */
