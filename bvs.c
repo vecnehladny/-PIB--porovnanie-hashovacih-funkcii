@@ -69,8 +69,9 @@ NODE *searchBVS(NODE *bvs, int number){
 //https://www.geeksforgeeks.org/print-binary-tree-2-dimensions/
 void printBvs(NODE *root, int space){
 	
-	if (root == NULL)
+	if (root == NULL){
 		return;
+	}
 	
 	space += SPACE;
 	
@@ -88,7 +89,7 @@ void printBvs(NODE *root, int space){
 }
 
 NODE *testBvs(int root){
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	NODE *new = bvsInit(root);
 	for (int i = 0; i < ATTEMPTS; i++) {
 		int r = rand()%INTERVAL;

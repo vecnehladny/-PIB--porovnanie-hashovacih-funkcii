@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include "zadanie2.h"
 
-void leftrotateRBT(NODE **root, NODE *x){
+void leftRotateRBT(NODE **root, NODE *x){
 	
 	if(!x || !x->right){
 		return;
@@ -41,7 +41,7 @@ void leftrotateRBT(NODE **root, NODE *x){
 	x->parent = y;
 }
 
-void rightrotateRBT(NODE **root, NODE *y){
+void rightRotateRBT(NODE **root, NODE *y){
 	
 	if(!y || !y->left){
 		return;
@@ -110,7 +110,7 @@ void insertfixRBT(NODE **root, NODE *z){
 				char ch = z->parent->color ;
 				z->parent->color = z->parent->parent->color;
 				z->parent->parent->color = ch;
-				rightRotate(root,z->parent->parent);
+				rightRotateRBT(root,z->parent->parent);
 			}
 			
 			// Left-Right (LR) case, do following
@@ -123,8 +123,8 @@ void insertfixRBT(NODE **root, NODE *z){
 				char ch = z->color ;
 				z->color = z->parent->parent->color;
 				z->parent->parent->color = ch;
-				LeftRotate(root,z->parent);
-				rightRotate(root,z->parent->parent);
+				leftRotateRBT(root,z->parent);
+				rightRotateRBT(root,z->parent->parent);
 			}
 			
 			// Right-Right (RR) case, do following
@@ -137,7 +137,7 @@ void insertfixRBT(NODE **root, NODE *z){
 				char ch = z->parent->color ;
 				z->parent->color = z->parent->parent->color;
 				z->parent->parent->color = ch;
-				LeftRotate(root,z->parent->parent);
+				leftRotateRBT(root,z->parent->parent);
 			}
 			
 			// Right-Left (RL) case, do following
@@ -150,8 +150,8 @@ void insertfixRBT(NODE **root, NODE *z){
 				char ch = z->color ;
 				z->color = z->parent->parent->color;
 				z->parent->parent->color = ch;
-				rightRotate(root,z->parent);
-				LeftRotate(root,z->parent->parent);
+				rightRotateRBT(root,z->parent);
+				leftRotateRBT(root,z->parent->parent);
 			}
 		}
 	}
@@ -202,11 +202,11 @@ NODE *searchRBT(NODE **root, int key){
 	}
 	
 	if((*root)->data > key){
-		searchRBT(((*root)->left), key);
+		searchRBT(&((*root)->left), key);
 	}
 	
 	if((*root)->data < key){
-		searchRBT(((*root)->right), key);
+		searchRBT(&((*root)->right), key);
 	}
 	
 	return NULL;

@@ -12,6 +12,7 @@
 #define SPACE 8
 #define ATTEMPTS 20
 #define INTERVAL 30
+//-----------------struktura stromu-----------------
 
 typedef struct node {
 	int data;
@@ -19,6 +20,22 @@ typedef struct node {
 	struct node *left, *right, *parent;
 	int height;
 } NODE;
+
+//-----------------struktura stromu-----------------
+
+
+
+//------------struktura hash-retazenie--------------
+
+typedef struct chain {
+	int hash;
+	struct chain *next;
+	int height;
+} CHAIN;
+
+//------------struktura hash-retazenie--------------
+
+
 
 //---------------BVS bez vyvazovania----------------
 
@@ -36,8 +53,8 @@ NODE *searchBVS(NODE *bvs, int number);
 //--------------Červeno-čierny strom----------------
 //https://framagit.org/awoimbee_42/libft/tree/7fac487e9aff2381c8d87b79a5cf36fdc8bf064f/src/t_rbtree
 
-void leftrotateRBT(NODE **root, NODE *x);
-void rightrotateRBT(NODE **root, NODE *y);
+void leftRotateRBT(NODE **root, NODE *x);
+void rightRotateRBT(NODE **root, NODE *y);
 void insertRBT(NODE **root, int data);
 void insertfixRBT(NODE **root, NODE *z);
 NODE *searchRBT(NODE **root, int key);
@@ -48,32 +65,34 @@ NODE *searchRBT(NODE **root, int key);
 
 //-------------------AVL strom----------------------
 
-NODE *RotationAVL(NODE *node, int isLeft);
+NODE *rotationAVL(NODE *node, int isLeft);
 NODE *doubleRotationAVL(NODE *node, int isLeft);
 NODE *insertAVL(NODE *node, int number);
 NODE *searchAVL(NODE *node, int number);
 NODE *initAVL(int root);
 
-int getHeightAVL(NODE *node);
-int getHeightValAVL(NODE *node);
+int getHeigthAVL(NODE *node);
+int getHeigthValAVL(NODE *node);
 int balanceFactorAVL(NODE *node);
 
 //-------------------AVL strom----------------------
 
 
 
+//-----------------hash-retazenie-------------------
+
+CHAIN *initHashtableChain(CHAIN **initialize);
+int insertHashCh(CHAIN *hashtable, char *key);
+int hashFunctionCh(char *key);
+CHAIN *searchHashCh(char *key);
+
+//-----------------hash-retazenie-------------------
+
+
+
 //--------------------ostatne-----------------------
 
-int getGreater(int i, int j){
-	
-	if(i > j){
-		return i;
-	}
-	
-	else {
-		return j;
-	}
-}
+int getGreater(int i, int j);
 
 //--------------------ostatne-----------------------
 
