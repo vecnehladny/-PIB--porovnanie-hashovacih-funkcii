@@ -12,6 +12,9 @@
 #define SPACE 8
 #define ATTEMPTS 20
 #define INTERVAL 30
+
+extern int isDEBUG;
+
 //-----------------struktura stromu-----------------
 
 typedef struct node {
@@ -28,7 +31,7 @@ typedef struct node {
 //------------struktura hash-retazenie--------------
 
 typedef struct chain {
-	int hash;
+	char *data;
 	struct chain *next;
 	int height;
 } CHAIN;
@@ -81,10 +84,11 @@ int balanceFactorAVL(NODE *node);
 
 //-----------------hash-retazenie-------------------
 
-CHAIN *initHashtableChain(CHAIN **initialize);
-int insertHashCh(CHAIN *hashtable, char *key);
+void initHashtableChain(CHAIN **initialize, int size);
+int insertHashCh(CHAIN **hashtable, char *key);
 int hashFunctionCh(char *key);
-CHAIN *searchHashCh(char *key);
+CHAIN *searchHashCh(CHAIN **hashtable, char *key);
+void printHashtable(CHAIN **hashtable);
 
 //-----------------hash-retazenie-------------------
 
