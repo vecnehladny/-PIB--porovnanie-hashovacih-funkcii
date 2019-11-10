@@ -89,6 +89,7 @@ int insertHashCh(CHAIN **hashtable, char *key);
 int hashFunctionCh(char *key);
 CHAIN *searchHashCh(CHAIN **hashtable, char *key);
 void printHashtable(CHAIN **hashtable);
+CHAIN *rehashCh(CHAIN **newHashtable, CHAIN **oldHashtable, int sizeOldHashtable);
 
 //-----------------hash-retazenie-------------------
 

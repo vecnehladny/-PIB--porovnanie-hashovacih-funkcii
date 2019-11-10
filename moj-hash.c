@@ -84,6 +84,27 @@ CHAIN *searchHashCh(CHAIN **hashtable, char *key){
 	return NULL;
 }
 
+CHAIN *rehashCh(CHAIN **newHashtable, CHAIN **oldHashtable, int sizeOldHashtable){
+	int sizeNewHashtable = 2 * sizeOldHashtable;
+	newHashtable = malloc(sizeNewHashtable * sizeof(CHAIN*));
+	HASHTABLESIZE = sizeNewHashtable;
+	
+	for (int i = 0; i < sizeOldHashtable; i++) {
+		if(oldHashtable[i] == NULL){
+			continue;
+		}
+		else {
+			CHAIN *temp = oldHashtable[i];
+			while(temp->next != NULL){
+				insertHashCh(newHashtable, temp->data);
+				temp = temp->next;
+			}
+			insertHashCh(newHashtable, temp->data);
+		}
+	}
+	return newHashtable;
+}
+
 void printHashtable(CHAIN **hashtable){
 	for (int i = 0; i < HASHTABLESIZE; i++) {
 		if(hashtable[i] == NULL){
