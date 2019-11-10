@@ -14,6 +14,7 @@
 #define INTERVAL 30
 
 extern int isDEBUG;
+extern int PRIME;
 
 //-----------------struktura stromu-----------------
 
@@ -28,12 +29,25 @@ typedef struct node {
 
 
 
+typedef struct HashNode{
+	int value;
+	int key;
+} HASHNODE;
+
+typedef struct HashMap{
+	HASHNODE **array;
+	int capacity;
+	int size;
+	HASHNODE *dummy;
+} HASHMAP;
+
+
+
 //------------struktura hash-retazenie--------------
 
 typedef struct chain {
 	char *data;
 	struct chain *next;
-	int height;
 } CHAIN;
 
 //------------struktura hash-retazenie--------------
@@ -61,6 +75,7 @@ void rightRotateRBT(NODE **root, NODE *y);
 void insertRBT(NODE **root, int data);
 void insertfixRBT(NODE **root, NODE *z);
 NODE *searchRBT(NODE **root, int key);
+void printRBT(NODE *root);
 
 //--------------Červeno-čierny strom----------------
 
@@ -86,12 +101,30 @@ int balanceFactorAVL(NODE *node);
 
 void initHashtableChain(CHAIN **initialize, int size);
 int insertHashCh(CHAIN **hashtable, char *key);
-int hashFunctionCh(char *key);
+double hashFunctionCh(char *key);
 CHAIN *searchHashCh(CHAIN **hashtable, char *key);
 void printHashtable(CHAIN **hashtable);
 CHAIN *rehashCh(CHAIN **newHashtable, CHAIN **oldHashtable, int sizeOldHashtable);
+void testUniqueCh(CHAIN **hashtable, int howMuch);
+void testNonUniqueCh(CHAIN **hashtable, int howMuch);
 
 //-----------------hash-retazenie-------------------
+
+
+
+//--------------hash-volne retazenie----------------
+//
+
+void initHashOA(HASHMAP *hashmap, int capacity, int size);
+int hashFunctionOA(HASHMAP *hashmap, int key);
+void insertHashOA(HASHMAP *hashmap, int key, int value);
+int deleteHashOA(HASHMAP *hashmap, int key);
+HASHNODE *getHashOA(HASHMAP *hashmap, int key);
+void displayHashOA(HASHMAP *hashmap);
+int sizeOfTableHashOA(HASHMAP *hashmap);
+int isEmptyHashOA(HASHMAP *hashmap);
+
+//--------------hash-volne retazenie----------------
 
 
 

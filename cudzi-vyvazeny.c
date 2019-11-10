@@ -212,3 +212,12 @@ NODE *searchRBT(NODE **root, int key){
 	return NULL;
 }
 
+void printRBT(NODE *root){
+	if (root == NULL)
+		return;
+	printRBT(root->left);
+	printf("%d\n", root->data);
+	printRBT(root->right);
+}
+
+
