@@ -1,8 +1,8 @@
 //
 //  cudzi-hash.c
-//  [DSA] zadanie2
+//  [PIB] Porovnavanie Hashov
 //
-//  Created by vecnehladny on 10/11/19.
+//  Created by vecnehladny on 08/04/20.
 //  Copyright © 2019 vecnehladny. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#include "zadanie2.h"
+#include "functions.h"
 
 void initHashOA(HASHMAP *hashmap, int capacity, int size){
 	

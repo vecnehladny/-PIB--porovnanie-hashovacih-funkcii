@@ -1,15 +1,15 @@
 //
 //  moj-hash.c
-//  [DSA] zadanie2
+//  [PIB] Porovnavanie Hashov
 //
-//  Created by vecnehladny on 09/11/19.
+//  Created by vecnehladny on 08/04/20.
 //  Copyright © 2019 vecnehladny. All rights reserved.
 //
 
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include "zadanie2.h"
+#include "functions.h"
 
 int PRIME=487;
 

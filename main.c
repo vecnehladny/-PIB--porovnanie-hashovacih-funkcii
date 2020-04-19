@@ -1,22 +1,20 @@
 //
 //  main.c
-//  [DSA] zadanie2
+//  [PIB] Porovnavanie Hashov
 //
-//  Created by vecnehladny on 03/11/19.
+//  Created by vecnehladny on 08/04/20.
 //  Copyright © 2019 vecnehladny. All rights reserved.
 //
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "zadanie2.h"
+#include "functions.h"
 
 
 
 int main(int argc, const char * argv[]) {
 	isDEBUG = 0;
-	//NODE *r = testBvs(3);
-	//printBvs(r, 0);
 	
 	CHAIN *hashtable[100];
 	CHAIN **newhashtable;
@@ -25,8 +23,8 @@ int main(int argc, const char * argv[]) {
 	testUniqueCh(hashtable, 100);
 	
 	printHashtable(hashtable);
-	//searchHashCh(hashtable, "HtJU8uFCrK");
-	//newhashtable = rehashCh(newhashtable, hashtable, 100);
-	//printHashtable(newhashtable);
+	searchHashCh(hashtable, "HtJU8uFCrK");
+	newhashtable = rehashCh(newhashtable, hashtable, 100);
+	printHashtable(newhashtable);
 	return 0;
 }
